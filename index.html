@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音声入力SOAPノート</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>音声入力SOAPノート</h1>
+    </header>
+
+    <main>
+        <div class="control-panel">
+            <button id="start-btn">
+                <span class="icon">🎤</span> 録音開始
+            </button>
+            <button id="stop-btn" disabled>
+                <span class="icon">⏹️</span> 録音停止
+            </button>
+            <button id="convert-btn">
+                <span class="icon">🔄</span> SOAP変換
+            </button>
+        </div>
+
+        <div id="status" class="status-indicator"></div>
+
+        <section class="input-section">
+            <h2>音声認識テキスト（リアルタイム）</h2>
+            <div id="transcript-display" placeholder="ここに音声がテキストとして表示されます..."></div>
+        </section>
+
+        <section id="result-section" class="soap-grid">
+            <div class="soap-card card-s" id="card-s">
+                <h3><span>S</span> 主観的情報</h3>
+                <div class="content"><ul id="list-s"></ul></div>
+            </div>
+            <div class="soap-card card-o" id="card-o">
+                <h3><span>O</span> 客観的情報</h3>
+                <div class="content"><ul id="list-o"></ul></div>
+            </div>
+            <div class="soap-card card-a" id="card-a">
+                <h3><span>A</span> 評価・分析</h3>
+                <div class="content"><ul id="list-a"></ul></div>
+            </div>
+            <div class="soap-card card-p" id="card-p">
+                <h3><span>P</span> 計画</h3>
+                <div class="content"><ul id="list-p"></ul></div>
+            </div>
+            <div class="soap-card card-u" id="card-u">
+                <h3><span>?</span> 未分類</h3>
+                <div class="content"><ul id="list-u"></ul></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
